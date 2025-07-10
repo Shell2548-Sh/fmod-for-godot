@@ -37,7 +37,7 @@ jobs:
         run: |
           cd addons\FMOD\native\tools
           python download_fmod.py ${{ secrets.FMOD_USERNAME }} ${{ secrets.FMOD_PASSWORD }} api windows 20212
-          "C:\Program Files\7-Zip\7z.exe" x fmodstudioapi20212win-installer.exe -o${{ github.workspace }}\addons\FMOD\native\fmodapi
+          & "C:\Program Files\7-Zip\7z.exe" x fmodstudioapi20212win-installer.exe -o${{ github.workspace }}\addons\FMOD\native\fmodapi
           cd ..\..\..\..
 
       - name: Compile Debug library
