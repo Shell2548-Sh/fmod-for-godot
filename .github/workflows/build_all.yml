@@ -3,6 +3,10 @@ name: Build FMOD Godot (Self-Hosted)
 on:
   workflow_dispatch
 
+permissions:
+  contents: read
+  actions: write
+
 env:
   FMOD_VERSION: 20212
   GODOT_ENGINE_VERSION: "4.0"
@@ -51,7 +55,7 @@ jobs:
           cd ..\..\..\
 
       - name: Upload Build Output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: windows-fmod-lib
           path: addons/FMOD/native/lib
